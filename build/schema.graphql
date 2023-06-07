@@ -1,0 +1,9 @@
+type TranDetail @entity {
+  id: ID!
+  status: String!
+  gas_used: BigInt!
+  block_hash: Bytes!
+  index: BigInt!
+  begin_ordinal: BigInt!
+  end_ordinal: BigInt!
+}
