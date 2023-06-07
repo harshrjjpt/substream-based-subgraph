@@ -1,5 +1,14 @@
 # Substream
 
+Substreams is a powerful blockchain indexing technology, developed for **The Graph** Network.
+
+# Substream features:-
+
+- Substreams enables developers to write Rust modules
+- It provides extremely high-performance indexing by virtue of parallelization, in a streaming-first fashion.
+- Low-cost caching and archiving of blockchain data, high throughput processing, and cursor-based reorgs handling.
+- The ability to store and process blockchain data using advanced parallelization techniques, making the processed data available for various types of data stores or real-time systems.
+
 ## Pre-requisites
 
 ### Getting started with Rust
@@ -22,3 +31,5 @@
 - [Subtreams Template (NFT)](https://github.com/streamingfast/substreams-template)
 - [Uniswap v3](https://github.com/streamingfast/substreams-uniswap-v3)
 - [Compound v2](https://github.com/0xbe1/compoundv2-substreams)
+
+  **If you find the list helpful, please make sure to ⭐ star it!**
