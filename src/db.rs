@@ -19,5 +19,7 @@ fn create_transaction_entity(tables: &mut Tables, transaction: &TranDetail) {
         .set("block_hash",  &transaction.block_hash)
         .set("index",transaction.index)
         .set("begin_ordinal", transaction.begin_ordinal)
-        .set("end_ordinal",  transaction.end_ordinal);
+        .set("end_ordinal",  transaction.end_ordinal)
+        .set("nonce",  transaction.nonce)
+        .set("gas_limit",  transaction.gas_limit);
 }
