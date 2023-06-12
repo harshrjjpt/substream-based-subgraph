@@ -26,6 +26,56 @@ Substreams is a powerful blockchain indexing technology, developed for **The Gra
 - [YouTube: Introducing Substreams](https://www.youtube.com/watch?v=qWxffTKpciU)
 - [Developer Docs](https://substreams.streamingfast.io/)
 
+## Local Setup Guide for Substreams
+
+Follow these steps to set up Substreams locally using a different approach:
+
+1. Begin by creating a new folder and cloning the repository. You can clone it from [this link](https://github.com/streamingfast/substreams-template/generate).
+
+2. Install the necessary dependencies:
+
+   - Install the Rust programming language, which is used for developing custom logic. You can install Rust in various ways, but for simplicity, execute the following commands:
+     ```bash
+     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+     source $HOME/.cargo/env
+     ```
+
+   - Install `protoc`, the Protocol Buffer compiler required for generating code in Rust and other languages from the protobuf definitions. Refer to the official [protocol buffer compiler documentation](https://grpc.io/docs/protoc-installation/) for installation instructions.
+
+   - Install `protoc-gen-prost`, a tool that helps generate Rust structures from protobuf definitions for use in Substreams modules. Install it by running:
+     ```bash
+     cargo install protoc-gen-prost
+     ```
+
+     > Note: If you forget to install `protoc` before generating the definitions, you may encounter an error mentioning `cmake` not being defined. Installing `protoc` is necessary as a fallback.
+
+   - Install `buf`, a tool that simplifies the generation of typed structures in any language. It simplifies the usage of `protoc` and supports Substreams packages. Visit [https://buf.build](https://buf.build) for installation instructions.
+
+3. Obtain the `substreams` CLI tool:
+
+   - For macOS users, install it using `brew`:
+     ```bash
+     brew install streamingfast/tap/substreams
+     ```
+
+   - Alternatively, download the pre-compiled binary for your platform:
+     ```bash
+     # Replace the URL with the correct binary for your platform
+     wget https://github.com/streamingfast/substreams/releases/download/v0.0.12/substreams_0.0.12_linux_x86_64.tar.gz
+     tar -xzvf substreams_0.0.12_linux_x86_64.tar.gz
+     export PATH="`pwd`:$PATH"
+     ```
+
+     > Make sure to visit [https://github.com/streamingfast/substreams/releases](https://github.com/streamingfast/substreams/releases) and use the latest available release.
+
+4. Validate the installation by checking if the `substreams` CLI works correctly:
+   ```bash
+   substreams -v
+   version (...)
+
+
+
+
 ### Sample Substreams
 
 - [Subtreams Template (NFT)](https://github.com/streamingfast/substreams-template)
