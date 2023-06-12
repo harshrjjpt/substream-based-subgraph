@@ -74,6 +74,32 @@ Follow these steps to set up Substreams locally using a different approach:
    version (...)
 
 
+5. Generating Protobuf:
+
+Use the following command to generate Protobuf code:
+
+```bash
+substreams protogen ./substreams.yaml --exclude-paths="sf/ethereum,sf/substreams,google"
+
+6. Compilation:
+
+Now, it's time to build the WASM binary and Protobuf definitions. Execute the following command:
+
+```bash
+cargo build --target wasm32-unknown-unknown --release
+
+7. Running the Substream:
+Finally, you can run the example Substream. Make sure you are in the project's root directory before executing the following commands:
+To run map module
+
+```substreams run -e api-dev.streamingfast.io:443 substreams.yaml map_transfers --start-block 12292922 --stop-block +1
+```
+
+To run the store module (and the map module in the background):
+```
+substreams run -e api-dev.streamingfast.io:443 substreams.yaml store_transfers --start-block 12292922 --stop-block +1
+```
+
 
 
 ### Sample Substreams
