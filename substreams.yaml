@@ -23,6 +23,14 @@ modules:
     output:
       type: proto:acme.TransactionList
 
+  - name: map_block
+    kind: map
+    initialBlock: 17427020
+    inputs:
+      - source: sf.ethereum.type.v2.Block
+    output:
+      type: proto:acme.BlockHeader
+
   - name: store_price
     kind: store
     initialBlock: 17427020
@@ -31,10 +39,21 @@ modules:
     inputs:
       - map: map_trx
 
+  - name: store_block
+    kind: store
+    initialBlock: 17427020
+    updatePolicy: set
+    valueType: proto:block_meta.BlockHeader
+    inputs:
+      - map: map_block
+
   - name: graph_out
     kind: map
     initialBlock: 17427020
     inputs:
       - map: map_trx
+      - map: map_block
+      - store: store_price
+      - store: store_block
     output:
       type: proto:sf.substreams.entity.v1.EntityChanges

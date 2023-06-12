@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: substreams
     name: Contract
@@ -8,7 +8,7 @@ dataSources:
     source:
       package:
         moduleName: graph_out
-        file: ./network-substream-v1.0.0.spkg
+        file: Contract/network-substream-v1.0.0.spkg
     mapping:
       apiVersion: 0.0.5
       kind: substreams/graph-entities
